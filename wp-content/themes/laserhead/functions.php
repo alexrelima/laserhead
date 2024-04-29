@@ -66,6 +66,48 @@ add_theme_support( 'woocommerce', array(
 ));
 
 
+add_action( 'woocommerce_before_quantity_input_field', 'bbloomer_display_quantity_minus' );
+ 
+function bbloomer_display_quantity_minus() {
+   if ( ! is_product() ) return;
+   echo '<button type="button" class="minus" >-</button>';
+}
+ 
+add_action( 'woocommerce_after_quantity_input_field', 'bbloomer_display_quantity_plus' );
+ 
+function bbloomer_display_quantity_plus() {
+   if ( ! is_product() ) return;
+   echo '<button type="button" class="plus" >+</button>';
+}
+ 
+add_action( 'woocommerce_before_single_product', 'bbloomer_add_cart_quantity_plus_minus' );
+ 
+function bbloomer_add_cart_quantity_plus_minus() {
+   wc_enqueue_js( "
+      $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } else {
+                  qty.val( val + step );
+               }
+            } else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+         });
+   " );
+}
+
+
 
 
 
