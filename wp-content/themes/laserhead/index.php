@@ -3,7 +3,11 @@
       
       <img src="<?php echo esc_url( home_url( '/' ) ); ?>wp-content/themes/laserhead/images/skull.png" alt="">
 
+
       <div class="buttons">
+
+            <a href="" class="btn-run btn-temp">Em Desenvolvimento</a>
+            <?php if( current_user_can('administrator') ) { ?>
             <a href="#" class="btn-run" tabindex="0">
                   <span></span>
                   <span></span>
@@ -19,6 +23,7 @@
                   <span></span>
                   Loja online
             </a>
+            <?php } ?>
       </div>
 </div>
 <?php get_footer();?>

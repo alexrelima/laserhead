@@ -44,10 +44,12 @@
               </span>
             </a>
           </h1>
-          <?php if (is_woocommerce() || is_cart() || is_checkout() || is_account_page()) { ?> 
-            <?php wp_nav_menu(array('theme_location' => 'menu-loja'));?>
-          <?php } else { ?> 
-            <?php wp_nav_menu(array('theme_location' => 'menu-principal'));?>
+          <?php if( current_user_can('administrator') ) { ?>
+            <?php if (is_woocommerce() || is_cart() || is_checkout() || is_account_page()) { ?> 
+              <?php wp_nav_menu(array('theme_location' => 'menu-loja'));?>
+            <?php } else { ?> 
+              <?php wp_nav_menu(array('theme_location' => 'menu-principal'));?>
+            <?php } ?>
           <?php } ?>
         </div>
       </div>
