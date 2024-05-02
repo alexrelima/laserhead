@@ -1,5 +1,21 @@
 $(function() {
 
+	$('.conteudos').owlCarousel({
+		loop:true,
+		margin:0,
+		nav:false,
+		dots: true,
+		autoplay: true,
+		items:1,
+		responsive:{
+			0:{
+			},
+			600:{
+			},
+			1000:{
+			},
+		}
+	});
 
 	$('.onsale').each(function(){
 		$(this).wrapInner('<i></i>');

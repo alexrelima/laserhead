@@ -17,7 +17,7 @@ if( !empty( $image ) ): ?>
 						$loop = new WP_Query( $args ); while ( $loop->have_posts() ) : $loop->the_post();
 					?>
 						<div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6">
-							<div class="item">
+							<div class="item-prod">
 								<?php the_post_thumbnail('post-thumbnail', array( 'class' => 'img-responsive' ));?>
 								<div class="item-box">
 									<h3><?php echo esc_html( get_field('tipo') ); ?></h3>
