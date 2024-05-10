@@ -9842,6 +9842,11 @@ footer p span{color: var(--white_skull); font-family: Poppins; font-size: 10px; 
 .redes ul li a:hover, .redes ul li a:focus { text-decoration: none; outline: none; } 
 .redes ul li a:hover svg, .redes ul li a:focus svg { filter: brightness(0) saturate(100%) invert(0%) sepia(97%) saturate(3845%) hue-rotate(358deg) brightness(93%) contrast(98%); }
 
+
+/* Page */
+.page-template-default  { background: url('images/bg-contato.png') #71161D; background-repeat: no-repeat; background-size: 47vh; } 
+.page-template-default footer { background: #040100; padding: 26px 10px; justify-content: space-between; align-items: center; align-self: stretch; } 
+
 /* Minha Conta */
 
 
