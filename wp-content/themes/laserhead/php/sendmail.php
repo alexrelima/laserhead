@@ -3,6 +3,7 @@ session_start();
 
 $nome = $_POST["name"];
 $email = $_POST["email"];
+$telefone = $_POST["telefone"];
 $assunto = $_POST["assunto"];
 $mensagem = $_POST["mensagem"];
 
@@ -33,7 +34,7 @@ try {
 
     //Recipients
     $mail->setFrom('admin@laserhead.com.br', $nome);
-    $mail->addAddress('overlord@laserhead.com.br', '$nome');     //Add a recipient
+    $mail->addAddress('contato@laserhead.com.br', '$nome');     //Add a recipient
     $mail->addReplyTo($email, $nome);
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -50,10 +51,11 @@ try {
         "<html>
             Nome: {$nome}<br/>
             E-mail: {$email}<br/>
+            Telefone: {$telefone}<br/>
             Mensagem: {$mensagem}
         </html>"
     );
-    $mail->AltBody = "Nome: {$nome}\nE-mail: {$email}\nMensagem:{$mensagem}";
+    $mail->AltBody = "Nome: {$nome}\nE-mail: {$email}\nTelefone: {$telefone}\nMensagem:{$mensagem}";
 
     if ($mail->send()) {
         $_SESSION["success"] = "Mensagem enviada com sucesso";

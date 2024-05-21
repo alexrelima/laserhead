@@ -8,7 +8,7 @@ get_header();?>
 		<div class="box-contato">
 			<h1>Contato</h1>
 			<p>Para entrar em contato conosco, por favor, preencha o formulário abaixo. Faremos o possível para responder o mais rápido possível. Obrigado pelo seu interesse!</p>
-			<form id="form-contact" method="POST" action="<?php bloginfo('template_directory');?>/php/sendcontact.php">
+			<form id="form-contact" method="POST" action="<?php bloginfo('template_directory');?>/php/sendmail.php">
 				<div class="esq">
 					<label for="name">Nome*</label>
 					<input type="text" name="name" placeholder="Digite seu nome" required>
@@ -17,8 +17,10 @@ get_header();?>
 					<label for="email">E-mail*</label>
 					<input type="email" name="email" placeholder="exemple@mail.com" required>
 				</div>
+				<label for="telefone">Telefone*</label>
+				<input type="text" name="telefone" placeholder="Digite seu telefone" required class="form-phone fullphone">
 				<label for="assunto">Assunto*</label>
-				<input type="text" name="assunto" placeholder="Digite sua mensagem" required>
+				<input type="text" name="assunto" placeholder="Digite o assunto" required>
 				<label for="mensagem">Mensagem*</label>
 				<textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem" required></textarea>
 				<button>Enviar <img src="<?php bloginfo('template_directory');?>/images/arrow-right.svg" alt=""></button>
