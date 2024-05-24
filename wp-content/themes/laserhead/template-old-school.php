@@ -47,19 +47,18 @@ if( !empty( $image ) ): ?>
 		</div>
 	</div>
 
-	<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 secundario" style="background-image: url(<?php the_field('destaque_conteudo_secundario'); ?>">
-		<div class="container">
-			<div class="row">
-				<div class="col col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-lg-5 col-lg-offset-7">
-					<?php the_field('conteudo_secundario'); ?>
-					<!--<a href="#">Em breve</a>-->
-					<span>Em Breve</span>
-				</div>
+	<div class="secundario">
+		<img src="<?php the_field('destaque_conteudo_secundario'); ?>" class="img-responsive">
+		<div class="container-sec">
+			<div class="secundario-content">
+				<?php the_field('conteudo_secundario'); ?>
+				<!--<a href="#">Em breve</a>-->
+				<span>Em Breve</span>
 			</div>
 		</div>
 	</div>
-
-	<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 secundario-mob" style="background-image: url(<?php the_field('destaque_conteudo_secundario_mobile'); ?>">
+	<div class="secundario-mob">
+		<img src="<?php the_field('destaque_conteudo_secundario_mobile'); ?>" class="img-responsive">
 	</div>
 	<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 secundario-mob-content">
 	</div>
