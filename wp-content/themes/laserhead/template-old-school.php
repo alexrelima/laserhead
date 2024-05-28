@@ -31,11 +31,11 @@ if( !empty( $image ) ): ?>
 								$image = get_sub_field('imagem_de_destaque');
 							?>
 							<div class="item">
-								<div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6 conteudo_carrousel">
+								<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 conteudo_carrousel">
 									<?php the_sub_field('conteudo'); ?>
 									<!--<a href="#">compre agora</a>-->
 								</div>
-								<div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6 imagem_carrousel">
+								<div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 imagem_carrousel">
 									<?php echo wp_get_attachment_image( $image, 'full' ); ?>
 								</div>
 							</div>

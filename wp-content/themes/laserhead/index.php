@@ -23,10 +23,14 @@
                <a href="#" class="btn-run" tabindex="0">
                   Dungeon Crawl Classics
             </a>
-                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>contato/" class="btn-run" tabindex="0">
+                  
+           
+              
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>contato/" class="btn-run run-contato" tabindex="0">
                   Contato
             </a>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>old-school-essentials/" class="btn-run" tabindex="0">
+              
+               <a href="<?php echo esc_url( home_url( '/' ) ); ?>old-school-essentials/" class="btn-run run-ose" tabindex="0">
                   Old school Essentials
             </a>
       </div>
