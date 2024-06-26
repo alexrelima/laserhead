@@ -40,7 +40,7 @@
           <h1 class="logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Laser Head">
               <span itemprop="image">
-                <img src="<?php bloginfo('template_directory');?>/images/logo_letter.png" alt="Laser Head" title="Laser Head" class="img-responsive">
+                <img src="<?php bloginfo('template_directory');?>/images/logo.svg" alt="Laser Head" title="Laser Head" class="img-responsive">
               </span>
             </a>
           </h1>

@@ -7,7 +7,7 @@ get_header();?>
 	<div class="row">
 		<div class="box-contato">
 			<h1>Contato</h1>
-			<p>Para entrar em contato conosco, por favor, preencha o formulário abaixo. Faremos o possível para responder o mais rápido possível. Obrigado pelo seu interesse!</p>
+			<p>Para entrar em contato conosco, por favor, preencha o formulário abaixo.</p>
 			<form id="form-contact" method="POST" action="<?php bloginfo('template_directory');?>/php/sendmail.php">
 				<div class="esq">
 					<label for="name">Nome*</label>

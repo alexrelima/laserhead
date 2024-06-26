@@ -86,6 +86,9 @@ $(function() {
 		/* Home - menu */
 		$(".run-contato").insertAfter(".run-ose");
 
+		/*OSE - Carrousel*/
+		$(".item .imagem_carrousel").prependTo(".item .conteudo_carrousel");
+
 	}
 
 	if ($(window).width() < 768) {
@@ -113,7 +116,7 @@ $(window).resize(function(){
 		$(".run-ose").insertAfter(".run-contato");
 	}
 
-	if ($(window).width() < 768) {
+	if ($(window).width() < 769) {
 		/*OSE - Logo*/
 		$(".banner-content .container").addClass('container-move');
 		$(".banner-content .container").prependTo(".conteudo");
