@@ -23,6 +23,30 @@ function laserhead_scripts(){
   wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ),  1, true  );
 
 
+  if (is_home()) {
+      //wp_register_script( 'index-js', get_template_directory_uri() . '/js/index.js', array( 'jquery' ), '1.0', TRUE );
+      //wp_enqueue_script( 'index-js' );
+  }else if ( is_product() ) {
+      wp_register_script( 'main-product', get_template_directory_uri() . '/js/main-product.js', array( 'jquery' ), '1.0', TRUE );
+      wp_enqueue_script( 'main-product' );
+  }else if ( is_cart() ) {
+      //wp_register_script( 'cart-js', get_template_directory_uri() . '/js/cart.js', array( 'jquery' ), '1.0', TRUE );
+      //wp_enqueue_script( 'cart-js' );
+  }else if ( is_page_template( 'template-contato.php' ) ) {
+      //wp_enqueue_script( 'mask', get_template_directory_uri() . '/js/jquery.mask.min.js', array( 'jquery' ), 1, true );
+      //wp_register_script( 'contato-js', get_template_directory_uri() . '/js/contato.js', array( 'jquery' ), '1.0', TRUE );
+      //wp_enqueue_script( 'contato-js' );
+  }
+  else if ( is_page_template( 'template-trabalhe.php' ) ) {
+      //wp_enqueue_script( 'mask', get_template_directory_uri() . '/js/jquery.mask.min.js', array( 'jquery' ), 1, true );
+      //wp_register_script( 'contato-js', get_template_directory_uri() . '/js/contato.js', array( 'jquery' ), '1.0', TRUE );
+      //wp_enqueue_script( 'contato-js' );
+  }
+  else if (is_product_category()) {
+    wp_register_script( 'category-product', get_template_directory_uri() . '/js/main-category.js', array( 'jquery' ), '1.0', TRUE );
+    wp_enqueue_script( 'category-product' );
+  }
+
 }
 add_action( 'wp_enqueue_scripts', 'laserhead_scripts' );
 
@@ -109,9 +133,35 @@ function bbloomer_add_cart_quantity_plus_minus() {
    " );
 }
 
+add_filter( 'woocommerce_catalog_orderby', 'so_37445423_orderby_options', 20 );
+
+function so_37445423_orderby_options( $options ){
+    $options['menu_order'] = __('Ordenar por', 'laserhead');
+    return $options;
+}
+
+// Change add to cart text on single product page
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
+function woocommerce_add_to_cart_button_text_single() {
+    return __( 'Adicionar ao carrinho', 'woocommerce' ); 
+}
 
 
-
+/**
+ * Change number of related products output
+ */ 
+function woo_related_products_limit() {
+  global $product;
+   
+   $args['posts_per_page'] = 6;
+   return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args', 20 );
+  function jk_related_products_args( $args ) {
+   $args['posts_per_page'] = 3; // 4 related products
+   $args['columns'] = 3; // arranged in 2 columns
+   return $args;
+}
 
 ?>
 
