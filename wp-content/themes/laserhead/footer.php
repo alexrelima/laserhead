@@ -5,7 +5,7 @@
 			<p>Todos os direitos reservados<br> <span>Laserhead®</span> - <?php echo date('Y');?></p>
 
 
-			<?php if (is_woocommerce()){ ?>
+			<?php if (is_woocommerce() || is_shop()){ ?>
 				<div class="redes">
 				<ul>
 					<li>
