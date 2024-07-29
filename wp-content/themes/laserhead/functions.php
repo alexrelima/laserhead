@@ -169,5 +169,21 @@ function remove_additional_information_tab( $tabs ) {
 
 }
 
+
+/* Widget */
+function laser_widget() {
+ register_sidebar( array(
+ 'name' => 'Widget Woocommerce',
+ 'id' => 'widget_woocommerce',
+ 'before_widget' => '<div class="widget">',
+ 'after_widget' => '</div>',
+ 'before_title' => '<h3 class="wid-woo">',
+ 'after_title' => '</h3>',
+ 'description' => 'área de widget Woocommerce',
+ ) );
+
+}
+add_action( 'widgets_init', 'laser_widget' );
+
 ?>
 
